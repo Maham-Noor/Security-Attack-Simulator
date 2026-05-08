@@ -32,12 +32,12 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## Milestone 3: Learning Dashboard
 
-- [ ] Show the four MVP scenarios only.
-- [ ] Build `LearningDashboard`.
-- [ ] Build `ScenarioCard`.
-- [ ] Build `ProgressSummary`.
-- [ ] Show completion status for each scenario.
-- [ ] Add a start or continue button for each scenario.
+- [x] Show the four MVP scenarios only.
+- [x] Build `LearningDashboard`.
+- [x] Build `ScenarioCard`.
+- [x] Build `ProgressSummary`.
+- [x] Show completion status for each scenario.
+- [x] Add a start or continue button for each scenario.
 
 ## Milestone 4: Reusable Scenario Player
 
