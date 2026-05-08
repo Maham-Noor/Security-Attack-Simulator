@@ -2,7 +2,7 @@ import { getScenarios } from "../../services/scenarioCatalog.js";
 import { ProgressSummary } from "./ProgressSummary.jsx";
 import { ScenarioCard } from "./ScenarioCard.jsx";
 
-export function LearningDashboard() {
+export function LearningDashboard({ onStartScenario }) {
   const scenarios = getScenarios();
 
   return (
@@ -24,7 +24,11 @@ export function LearningDashboard() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {scenarios.map((scenario) => (
-            <ScenarioCard key={scenario.id} scenario={scenario} />
+            <ScenarioCard
+              key={scenario.id}
+              scenario={scenario}
+              onStart={() => onStartScenario(scenario.id)}
+            />
           ))}
         </div>
       </section>

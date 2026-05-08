@@ -41,15 +41,15 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## Milestone 4: Reusable Scenario Player
 
-- [ ] Build `ScenarioPlayer`.
-- [ ] Build `ScenarioBrief`.
-- [ ] Build `VisualizationStep`.
-- [ ] Build `GuidedOptions`.
-- [ ] Build `DefenseView`.
-- [ ] Add a simple Vulnerable/Secure mode toggle.
-- [ ] Support next and back step navigation.
-- [ ] Show short feedback after guided choices.
-- [ ] Reuse this player for all four scenarios.
+- [x] Build `ScenarioPlayer`.
+- [x] Build `ScenarioBrief`.
+- [x] Build `VisualizationStep`.
+- [x] Build `GuidedOptions`.
+- [x] Build `DefenseView`.
+- [x] Add a simple Vulnerable/Secure mode toggle.
+- [x] Support next and back step navigation.
+- [x] Show short feedback after guided choices.
+- [x] Reuse this player for all four scenarios.
 
 ## Milestone 5: Local Learning Progress
 

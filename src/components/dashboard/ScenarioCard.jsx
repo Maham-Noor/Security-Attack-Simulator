@@ -3,7 +3,7 @@ import { Badge } from "../ui/Badge.jsx";
 import { Button } from "../ui/Button.jsx";
 import { Panel } from "../ui/Panel.jsx";
 
-export function ScenarioCard({ scenario }) {
+export function ScenarioCard({ scenario, onStart }) {
   return (
     <Panel className="flex min-h-72 flex-col justify-between gap-5">
       <div className="flex flex-col gap-4">
@@ -41,7 +41,7 @@ export function ScenarioCard({ scenario }) {
         </div>
       </div>
 
-      <Button type="button" className="w-full justify-between">
+      <Button type="button" className="w-full justify-between" onClick={onStart}>
         Start scenario
         <ArrowRight aria-hidden="true" className="h-4 w-4" />
       </Button>
