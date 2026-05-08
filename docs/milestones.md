@@ -23,12 +23,12 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## Milestone 2: Simple Scenario Model
 
-- [ ] Create one simple scenario object shape.
-- [ ] Include `id`, `title`, `description`, `category`, and `difficulty`.
-- [ ] Include `brief`, `steps`, and `defense`.
-- [ ] Include `vulnerableMode` and `secureMode` content.
-- [ ] Keep scenario data in plain JavaScript files.
-- [ ] Create `scenarioCatalog.js` to return the four MVP scenarios.
+- [x] Create one simple scenario object shape.
+- [x] Include `id`, `title`, `description`, `category`, and `difficulty`.
+- [x] Include `brief`, `steps`, and `defense`.
+- [x] Include `vulnerableMode` and `secureMode` content.
+- [x] Keep scenario data in plain JavaScript files.
+- [x] Create `scenarioCatalog.js` to return the four MVP scenarios.
 
 ## Milestone 3: Learning Dashboard
 
