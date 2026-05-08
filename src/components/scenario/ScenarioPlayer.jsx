@@ -8,14 +8,24 @@ import { ScenarioBrief } from "./ScenarioBrief.jsx";
 import { StepProgress } from "./StepProgress.jsx";
 import { VisualizationStep } from "./VisualizationStep.jsx";
 
+import {
+  getScenarioStep,
+  saveScenarioStep,
+  markModeViewed,
+  markScenarioComplete,
+} from "../../services/progressStorage.js";
+
 const MODES = {
   vulnerable: "vulnerable",
   secure: "secure",
 };
 
 export function ScenarioPlayer({ scenario, onBack }) {
-  const [mode, setMode] = useState(MODES.vulnerable);
-  const [stepIndex, setStepIndex] = useState(0);
+  const [mode, setMode] = useState(() => {
+    markModeViewed(scenario.id, MODES.vulnerable);
+    return MODES.vulnerable;
+  });
+  const [stepIndex, setStepIndex] = useState(() => getScenarioStep(scenario.id));
   const [selectedOptionId, setSelectedOptionId] = useState("");
   const [showDefense, setShowDefense] = useState(false);
 
@@ -26,6 +36,7 @@ export function ScenarioPlayer({ scenario, onBack }) {
   const isLastStep = stepIndex === scenario.steps.length - 1;
 
   function handleModeChange(nextMode) {
+    markModeViewed(scenario.id, nextMode);
     setMode(nextMode);
     setSelectedOptionId("");
   }
@@ -36,12 +47,17 @@ export function ScenarioPlayer({ scenario, onBack }) {
       return;
     }
 
-    setStepIndex((currentStep) => Math.max(currentStep - 1, 0));
+    setStepIndex((currentStep) => {
+      const prevStep = Math.max(currentStep - 1, 0);
+      saveScenarioStep(scenario.id, prevStep);
+      return prevStep;
+    });
     setSelectedOptionId("");
   }
 
   function handleNext() {
     if (showDefense) {
+      markScenarioComplete(scenario.id);
       onBack();
       return;
     }
@@ -51,7 +67,11 @@ export function ScenarioPlayer({ scenario, onBack }) {
       return;
     }
 
-    setStepIndex((currentStep) => currentStep + 1);
+    setStepIndex((currentStep) => {
+      const nextStep = currentStep + 1;
+      saveScenarioStep(scenario.id, nextStep);
+      return nextStep;
+    });
     setSelectedOptionId("");
   }
 

@@ -53,13 +53,13 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## Milestone 5: Local Learning Progress
 
-- [ ] Create `progressStorage.js`.
-- [ ] Save progress in `localStorage`.
-- [ ] Track completed scenario ids.
-- [ ] Track current step per scenario.
-- [ ] Track whether the learner viewed both Vulnerable Mode and Secure Mode.
-- [ ] Track optional reflection answers.
-- [ ] Confirm progress remains after refresh.
+- [x] Create `progressStorage.js`.
+- [x] Save progress in `localStorage`.
+- [x] Track completed scenario ids.
+- [x] Track current step per scenario.
+- [x] Track whether the learner viewed both Vulnerable Mode and Secure Mode.
+- [x] Track optional reflection answers.
+- [x] Confirm progress remains after refresh.
 
 ## Milestone 6: SQL Injection Simulation
 

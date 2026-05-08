@@ -1,9 +1,12 @@
 import { getScenarios } from "../../services/scenarioCatalog.js";
+import { getProgress, isScenarioComplete, getScenarioStep } from "../../services/progressStorage.js";
 import { ProgressSummary } from "./ProgressSummary.jsx";
 import { ScenarioCard } from "./ScenarioCard.jsx";
 
 export function LearningDashboard({ onStartScenario }) {
   const scenarios = getScenarios();
+  const progress = getProgress();
+  const completedCount = progress.completedScenarios.length;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_20rem]">
@@ -28,12 +31,14 @@ export function LearningDashboard({ onStartScenario }) {
               key={scenario.id}
               scenario={scenario}
               onStart={() => onStartScenario(scenario.id)}
+              isCompleted={isScenarioComplete(scenario.id)}
+              currentStep={getScenarioStep(scenario.id)}
             />
           ))}
         </div>
       </section>
 
-      <ProgressSummary completedCount={0} totalCount={scenarios.length} />
+      <ProgressSummary completedCount={completedCount} totalCount={scenarios.length} />
     </div>
   );
 }

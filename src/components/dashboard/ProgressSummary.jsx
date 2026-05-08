@@ -12,7 +12,7 @@ export function ProgressSummary({ completedCount, totalCount }) {
         </div>
         <div>
           <h2 className="text-base font-semibold text-white">Local Progress</h2>
-          <p className="text-sm text-slate-400">Milestone 5 will persist this</p>
+          <p className="text-sm text-slate-400">Saved in your browser</p>
         </div>
       </div>
 

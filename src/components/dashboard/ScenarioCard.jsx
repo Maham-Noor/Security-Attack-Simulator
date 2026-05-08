@@ -3,7 +3,15 @@ import { Badge } from "../ui/Badge.jsx";
 import { Button } from "../ui/Button.jsx";
 import { Panel } from "../ui/Panel.jsx";
 
-export function ScenarioCard({ scenario, onStart }) {
+export function ScenarioCard({ scenario, onStart, isCompleted, currentStep }) {
+  const statusBadge = isCompleted ? (
+    <Badge className="bg-emerald-500/20 text-emerald-400">Completed</Badge>
+  ) : currentStep > 0 ? (
+    <Badge className="bg-amber-500/20 text-amber-400">In Progress</Badge>
+  ) : (
+    <Badge>Not started</Badge>
+  );
+
   return (
     <Panel className="flex min-h-72 flex-col justify-between gap-5">
       <div className="flex flex-col gap-4">
@@ -11,7 +19,7 @@ export function ScenarioCard({ scenario, onStart }) {
           <div className="flex h-10 w-10 items-center justify-center rounded-md bg-surface-800 text-signal-400">
             <ShieldAlert aria-hidden="true" className="h-5 w-5" />
           </div>
-          <Badge>Not started</Badge>
+          {statusBadge}
         </div>
 
         <div>
@@ -42,7 +50,7 @@ export function ScenarioCard({ scenario, onStart }) {
       </div>
 
       <Button type="button" className="w-full justify-between" onClick={onStart}>
-        Start scenario
+        {isCompleted ? "Review scenario" : currentStep > 0 ? "Continue scenario" : "Start scenario"}
         <ArrowRight aria-hidden="true" className="h-4 w-4" />
       </Button>
     </Panel>
