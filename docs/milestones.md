@@ -16,10 +16,10 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 - [x] Create Vite React app files.
 - [x] Configure TailwindCSS files.
 - [x] Add base `src/` folder structure.
-- [ ] Add reusable layout components.
-- [ ] Add reusable UI components.
-- [ ] Install dependencies with `npm install`.
-- [ ] Confirm the app starts successfully in development mode.
+- [x] Add reusable layout components.
+- [x] Add reusable UI components.
+- [x] Install dependencies with `npm install`.
+- [x] Confirm the app starts successfully in development mode.
 
 ## Milestone 2: Simple Scenario Model
 
