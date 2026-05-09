@@ -3,6 +3,7 @@ import { User, Server, Eye, Lightbulb } from "lucide-react";
 import { Panel } from "../ui/Panel.jsx";
 import { SqlQueryVisualizer } from "../visualizations/SqlQueryVisualizer.jsx";
 import { XssVisualizer } from "../visualizations/XssVisualizer.jsx";
+import { CsrfRequestVisualizer } from "../visualizations/CsrfRequestVisualizer.jsx";
 
 export function VisualizationStep({ step, modeContent, scenarioId, mode }) {
   const timelineItems = [
@@ -46,7 +47,7 @@ export function VisualizationStep({ step, modeContent, scenarioId, mode }) {
 
   return (
     <Panel className="overflow-hidden">
-      <div className="grid gap-8 lg:grid-cols-[1fr_24rem] xl:grid-cols-[1fr_30rem]">
+      <div className="grid gap-8 lg:grid-cols-[20rem_1fr] xl:grid-cols-[24rem_1fr]">
         {/* Left Side: Timeline */}
         <div className="flex flex-col">
           <p className="text-sm font-semibold uppercase tracking-wide text-signal-400">
@@ -94,6 +95,8 @@ export function VisualizationStep({ step, modeContent, scenarioId, mode }) {
                 <SqlQueryVisualizer step={step} mode={mode} />
               ) : scenarioId === "xss" ? (
                 <XssVisualizer step={step} mode={mode} />
+              ) : scenarioId === "csrf" ? (
+                <CsrfRequestVisualizer step={step} mode={mode} />
               ) : (
                 <GenericVisualizer modeContent={modeContent} />
               )}

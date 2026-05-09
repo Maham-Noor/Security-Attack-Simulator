@@ -83,13 +83,13 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## Milestone 8: CSRF Simulation
 
-- [ ] Create `csrfScenario.js`.
-- [ ] Build `CsrfRequestVisualizer`.
-- [ ] Vulnerable Mode: show a simulated unwanted request changing a mock setting.
-- [ ] Secure Mode: show the request blocked by token or SameSite protection.
-- [ ] Show mock browser, request, token, and server decision states.
-- [ ] Add a Defense View about CSRF tokens and SameSite cookies.
-- [ ] Confirm no real network request is sent.
+- [x] Create `csrfScenario.js`.
+- [x] Build `CsrfRequestVisualizer`.
+- [x] Vulnerable Mode: show a simulated unwanted request changing a mock setting.
+- [x] Secure Mode: show the request blocked by token or SameSite protection.
+- [x] Show mock browser, request, token, and server decision states.
+- [x] Add a Defense View about CSRF tokens and SameSite cookies.
+- [x] Confirm no real network request is sent.
 
 ## Milestone 9: Buffer Overflow Visual Simulation
 
@@ -118,5 +118,5 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 - [x] SQL Injection
 - [x] Cross-Site Scripting (XSS)
-- [ ] Cross-Site Request Forgery (CSRF)
+- [x] Cross-Site Request Forgery (CSRF)
 - [ ] Buffer Overflow, visual simulation only
