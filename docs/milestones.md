@@ -63,23 +63,23 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## Milestone 6: SQL Injection Simulation
 
-- [ ] Create `sqlInjectionScenario.js`.
-- [ ] Build `SqlQueryVisualizer`.
-- [ ] Vulnerable Mode: show unsafe input changing a simulated query result.
-- [ ] Secure Mode: show parameterized query behavior conceptually.
-- [ ] Show a mock table and simulated query text.
-- [ ] Add a Defense View about parameterized queries and validation.
-- [ ] Confirm no real database or SQL execution is used.
+- [x] Create `sqlInjectionScenario.js`.
+- [x] Build `SqlQueryVisualizer`.
+- [x] Vulnerable Mode: show unsafe input changing a simulated query result.
+- [x] Secure Mode: show parameterized query behavior conceptually.
+- [x] Show a mock table and simulated query text.
+- [x] Add a Defense View about parameterized queries and validation.
+- [x] Confirm no real database or SQL execution is used.
 
 ## Milestone 7: XSS Simulation
 
-- [ ] Create `xssScenario.js`.
-- [ ] Build `XssVisualizer`.
-- [ ] Vulnerable Mode: show untrusted content appearing in a mock page preview.
-- [ ] Secure Mode: show escaped or sanitized content.
-- [ ] Explain the difference between unsafe rendering and safe text output.
-- [ ] Add a Defense View about output encoding and sanitization.
-- [ ] Confirm no real script execution is allowed.
+- [x] Create `xssScenario.js`.
+- [x] Build `XssVisualizer`.
+- [x] Vulnerable Mode: show untrusted content appearing in a mock page preview.
+- [x] Secure Mode: show escaped or sanitized content.
+- [x] Explain the difference between unsafe rendering and safe text output.
+- [x] Add a Defense View about output encoding and sanitization.
+- [x] Confirm no real script execution is allowed.
 
 ## Milestone 8: CSRF Simulation
 
@@ -116,7 +116,7 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## MVP Attack List
 
-- [ ] SQL Injection
-- [ ] Cross-Site Scripting (XSS)
+- [x] SQL Injection
+- [x] Cross-Site Scripting (XSS)
 - [ ] Cross-Site Request Forgery (CSRF)
 - [ ] Buffer Overflow, visual simulation only
