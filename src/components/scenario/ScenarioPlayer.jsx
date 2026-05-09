@@ -80,7 +80,7 @@ export function ScenarioPlayer({ scenario, onBack }) {
       <button
         type="button"
         onClick={onBack}
-        className="inline-flex w-fit items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-white"
+        className="inline-flex w-fit items-center gap-2 rounded-md px-2 py-1 text-sm font-medium text-slate-300 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-400"
       >
         <ArrowLeft aria-hidden="true" className="h-4 w-4" />
         Back to dashboard
@@ -102,11 +102,12 @@ export function ScenarioPlayer({ scenario, onBack }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 rounded-md border border-slate-800 bg-surface-950 p-1">
+          <div className="grid grid-cols-2 rounded-md border border-slate-800 bg-surface-950 p-1" role="group" aria-label="Simulation mode">
             <button
               type="button"
               onClick={() => handleModeChange(MODES.vulnerable)}
-              className={`rounded px-3 py-2 text-sm font-medium transition ${
+              aria-pressed={mode === MODES.vulnerable}
+              className={`rounded px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-400 ${
                 mode === MODES.vulnerable
                   ? "bg-signal-500 text-surface-950"
                   : "text-slate-300 hover:text-white"
@@ -117,7 +118,8 @@ export function ScenarioPlayer({ scenario, onBack }) {
             <button
               type="button"
               onClick={() => handleModeChange(MODES.secure)}
-              className={`rounded px-3 py-2 text-sm font-medium transition ${
+              aria-pressed={mode === MODES.secure}
+              className={`rounded px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal-400 ${
                 mode === MODES.secure
                   ? "bg-signal-500 text-surface-950"
                   : "text-slate-300 hover:text-white"

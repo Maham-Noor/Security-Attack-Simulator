@@ -103,16 +103,16 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## Milestone 10: MVP Review and Polish
 
-- [ ] Confirm all four scenarios use the same `ScenarioPlayer`.
-- [ ] Confirm every scenario has Vulnerable Mode and Secure Mode.
-- [ ] Confirm every scenario has a Defense View.
-- [ ] Confirm all learner inputs are Guided Options.
-- [ ] Confirm no live requests, real databases, or real attack execution exist.
-- [ ] Make the dashboard and scenario screens responsive.
-- [ ] Make buttons keyboard accessible.
-- [ ] Ensure visual states also have text explanations.
-- [ ] Update README with setup and usage instructions.
-- [ ] Run production build.
+- [x] Confirm all four scenarios use the same `ScenarioPlayer`.
+- [x] Confirm every scenario has Vulnerable Mode and Secure Mode.
+- [x] Confirm every scenario has a Defense View.
+- [x] Confirm all learner inputs are Guided Options.
+- [x] Confirm no live requests, real databases, or real attack execution exist.
+- [x] Make the dashboard and scenario screens responsive.
+- [x] Make buttons keyboard accessible.
+- [x] Ensure visual states also have text explanations.
+- [x] Update README with setup and usage instructions.
+- [x] Run production build.
 
 ## MVP Attack List
 

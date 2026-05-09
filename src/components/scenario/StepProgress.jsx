@@ -9,7 +9,14 @@ export function StepProgress({ currentStep, totalSteps }) {
         <p className="text-sm font-medium text-slate-300">
           Step {currentStep} of {totalSteps}
         </p>
-        <div className="h-2 w-40 overflow-hidden rounded-full bg-surface-800">
+        <div
+          className="h-2 w-40 overflow-hidden rounded-full bg-surface-800"
+          role="progressbar"
+          aria-valuenow={currentStep}
+          aria-valuemin={0}
+          aria-valuemax={totalSteps}
+          aria-label={`Step ${currentStep} of ${totalSteps}`}
+        >
           <div
             className="h-full rounded-full bg-signal-500"
             style={{ width: `${progressPercent}%` }}

@@ -21,7 +21,14 @@ export function ProgressSummary({ completedCount, totalCount }) {
           <span className="text-4xl font-semibold text-white">{completedCount}</span>
           <span className="pb-1 text-sm text-slate-400">of {totalCount} complete</span>
         </div>
-        <div className="mt-4 h-2 overflow-hidden rounded-full bg-surface-800">
+        <div
+          className="mt-4 h-2 overflow-hidden rounded-full bg-surface-800"
+          role="progressbar"
+          aria-valuenow={completedCount}
+          aria-valuemin={0}
+          aria-valuemax={totalCount}
+          aria-label={`${completedCount} of ${totalCount} scenarios complete`}
+        >
           <div
             className="h-full rounded-full bg-signal-500"
             style={{ width: `${progressPercent}%` }}
