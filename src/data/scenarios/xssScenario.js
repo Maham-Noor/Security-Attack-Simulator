@@ -11,50 +11,58 @@ export const xssScenario = {
   },
   vulnerableMode: {
     title: "Vulnerable Mode",
-    summary: "The mock page renders untrusted content as if it belongs to the page.",
+    summary: "The mock page renders untrusted content directly into the DOM.",
     visualState: {
-      comment: "<script>alert('demo')</script>",
-      preview: "The simulator highlights this as unsafe page behavior.",
+      result: "The injected script is parsed as HTML and executed.",
+      status: "Compromised",
     },
   },
   secureMode: {
     title: "Secure Mode",
-    summary: "The mock page displays untrusted content as escaped text.",
+    summary: "The mock page uses output encoding to convert special characters into safe HTML entities.",
     visualState: {
-      comment: "&lt;script&gt;alert('demo')&lt;/script&gt;",
-      preview: "The content is shown as text, not page behavior.",
+      result: "The injected script is safely rendered as plain text.",
+      status: "Protected",
     },
   },
   steps: [
     {
       id: "review-comment",
-      title: "Review untrusted content",
-      studentAction: "Inspect the fictional comment before it appears in the preview.",
-      systemReaction: "The simulator labels the content as untrusted.",
-      visualStateChange: "The comment moves into the mock page preview.",
-      learningPoint: "Content from users should not be trusted by default.",
+      title: "Review trusted content",
+      studentAction: "Submit a standard, benign text comment.",
+      systemReaction: "The mock server stores the comment and the browser renders it normally.",
+      visualStateChange: "The comment appears safely inside the mock page.",
+      learningPoint: "Standard text naturally flows into the DOM without changing page structure.",
       guidedOptions: [
         {
           id: "inspect",
-          label: "Inspect the comment",
-          feedback: "Good. The simulator treats this as content that needs safe handling.",
+          label: "Submit: 'Hello, this is a normal comment!'",
+          feedback: "The text is rendered safely. The account status remains intact.",
         },
       ],
+      xssData: {
+        payload: "Hello, this is a normal comment!",
+        isAttack: false,
+      },
     },
     {
       id: "compare-rendering",
-      title: "Compare rendering behavior",
-      studentAction: "Switch between unsafe rendering and escaped output.",
-      systemReaction: "Secure Mode displays the same content as harmless text.",
-      visualStateChange: "The preview changes from unsafe behavior to safe text output.",
-      learningPoint: "Output encoding helps prevent untrusted content from becoming page behavior.",
+      title: "Inject malicious script",
+      studentAction: "Submit a comment containing a JavaScript payload.",
+      systemReaction: "The mock server stores the payload. The browser then receives it.",
+      visualStateChange: "In Vulnerable Mode, the script executes and overwrites the DOM.",
+      learningPoint: "Output encoding prevents the browser from confusing user data with executable code.",
       guidedOptions: [
         {
           id: "escape-output",
-          label: "Use escaped output",
-          feedback: "The mock page now shows the content safely as text.",
+          label: "Submit XSS Payload",
+          feedback: "Observe how the DOM handles the HTML tags.",
         },
       ],
+      xssData: {
+        payload: `<script>\ndocument.getElementById("account-status").innerHTML =\n"⚠ Session Compromised: Untrusted Script Executed";\n</script>`,
+        isAttack: true,
+      },
     },
   ],
   defense: {
@@ -62,7 +70,7 @@ export const xssScenario = {
     points: [
       "Escape output before displaying untrusted content.",
       "Sanitize content when limited formatting is allowed.",
-      "Use browser protections as an extra layer, not the only defense.",
+      "Use browser protections (like CSP) as an extra layer, not the only defense.",
     ],
   },
 };

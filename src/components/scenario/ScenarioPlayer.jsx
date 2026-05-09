@@ -134,7 +134,12 @@ export function ScenarioPlayer({ scenario, onBack }) {
       ) : (
         <>
           <StepProgress currentStep={stepIndex + 1} totalSteps={scenario.steps.length} />
-          <VisualizationStep step={step} modeContent={modeContent} />
+          <VisualizationStep
+            step={step}
+            modeContent={modeContent}
+            scenarioId={scenario.id}
+            mode={mode}
+          />
           <GuidedOptions
             options={step.guidedOptions}
             selectedOptionId={selectedOptionId}
