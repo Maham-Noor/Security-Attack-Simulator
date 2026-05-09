@@ -46,14 +46,14 @@ export function VisualizationStep({ step, modeContent, scenarioId, mode }) {
 
   return (
     <Panel className="overflow-hidden">
-      <div className="grid gap-8 lg:grid-cols-[20rem_1fr] xl:grid-cols-[24rem_1fr]">
+      <div className="grid gap-8 lg:grid-cols-[1fr_24rem] xl:grid-cols-[1fr_30rem]">
         {/* Left Side: Timeline */}
         <div className="flex flex-col">
           <p className="text-sm font-semibold uppercase tracking-wide text-signal-400">
             Attack Flow
           </p>
           <h2 className="mt-1 text-2xl font-bold text-white">{step.title}</h2>
-          
+
           <div className="relative mt-8 space-y-6 before:absolute before:inset-y-0 before:left-5 before:w-0.5 before:bg-slate-800/80">
             <AnimatePresence mode="popLayout">
               {timelineItems.map((item, index) => (
