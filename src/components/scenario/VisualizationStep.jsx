@@ -4,6 +4,7 @@ import { Panel } from "../ui/Panel.jsx";
 import { SqlQueryVisualizer } from "../visualizations/SqlQueryVisualizer.jsx";
 import { XssVisualizer } from "../visualizations/XssVisualizer.jsx";
 import { CsrfRequestVisualizer } from "../visualizations/CsrfRequestVisualizer.jsx";
+import { BufferMemoryVisualizer } from "../visualizations/BufferMemoryVisualizer.jsx";
 
 export function VisualizationStep({ step, modeContent, scenarioId, mode }) {
   const timelineItems = [
@@ -97,6 +98,8 @@ export function VisualizationStep({ step, modeContent, scenarioId, mode }) {
                 <XssVisualizer step={step} mode={mode} />
               ) : scenarioId === "csrf" ? (
                 <CsrfRequestVisualizer step={step} mode={mode} />
+              ) : scenarioId === "buffer-overflow" ? (
+                <BufferMemoryVisualizer step={step} mode={mode} />
               ) : (
                 <GenericVisualizer modeContent={modeContent} />
               )}

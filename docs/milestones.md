@@ -93,13 +93,13 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 
 ## Milestone 9: Buffer Overflow Visual Simulation
 
-- [ ] Create `bufferOverflowScenario.js`.
-- [ ] Build `BufferMemoryVisualizer`.
-- [ ] Vulnerable Mode: show oversized input overflowing visual memory cells.
-- [ ] Secure Mode: show bounds checking rejecting or truncating oversized input.
-- [ ] Keep the visualization conceptual and beginner-friendly.
-- [ ] Add a Defense View about bounds checks, safer APIs, and memory-safe languages.
-- [ ] Confirm no unsafe native code is used.
+- [x] Create `bufferOverflowScenario.js`.
+- [x] Build `BufferMemoryVisualizer`.
+- [x] Vulnerable Mode: show oversized input overflowing visual memory cells.
+- [x] Secure Mode: show bounds checking rejecting or truncating oversized input.
+- [x] Keep the visualization conceptual and beginner-friendly.
+- [x] Add a Defense View about bounds checks, safer APIs, and memory-safe languages.
+- [x] Confirm no unsafe native code is used.
 
 ## Milestone 10: MVP Review and Polish
 
@@ -119,4 +119,5 @@ Do not implement authentication, multiplayer, real attack execution, arbitrary p
 - [x] SQL Injection
 - [x] Cross-Site Scripting (XSS)
 - [x] Cross-Site Request Forgery (CSRF)
-- [ ] Buffer Overflow, visual simulation only
+- [x] Buffer Overflow, visual simulation only
+
